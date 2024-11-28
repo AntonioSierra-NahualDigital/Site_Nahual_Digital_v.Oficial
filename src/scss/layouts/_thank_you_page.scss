@@ -1,0 +1,78 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// fondo de sección 
+.gracias{
+    @include m.contenedor;
+    background: linear-gradient(135deg, #000000, #1B3A4B, #00A676);
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    animation: fondoAgradecimientoTech 15s ease infinite;
+    @keyframes fondoAgradecimientoTech {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
+// logotipo
+.logotipo{    
+    img{
+        width: 30rem;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+// Estilo de la información
+.informacion-thank{
+    text-align: center;
+    h1{
+        color: v.$verde;
+    }
+    p{
+        color: v.$blanco;
+        font-size: 2rem;
+    }
+    .h3{
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: v.$verde;
+    }
+    @include m.tablet{
+        p{
+            color: v.$blanco;
+            font-size: 3rem;
+        }
+    }
+}
+// Disposición de los elementos del menu
+.navegacion-thank{
+    @include m.flex(column, center, center);
+    margin-top: 3rem;
+    @include m.tablet{
+        @include m.flex(row, center, center);
+        gap: 6rem;
+    }
+}
+// Horarios thank
+.Horarios-thank{
+    p{
+        font-weight: 500;
+    }
+}
+// Estilos del menu
+.navegacion-thank{    
+    a{
+        backdrop-filter: blur(20px);
+        color: v.$blanco;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        padding: 2rem;
+        border-radius: 18px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color: rgba(v.$violeta, 0.2);
+        }
+    }
+}
+
