@@ -1,0 +1,109 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Superior de sección 
+.hablemos{
+    padding-left: 2rem;
+    padding-right: 2rem; 
+    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    animation: fondoDinamico6 15s ease infinite;     
+    @keyframes fondoDinamico6 {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @include m.tablet{
+        padding-left: 5.2rem;
+        padding-right: 5.2rem; 
+    }
+}
+.hablemos .titulo{
+    @include m.flex(column, center, center);
+    text-align: center;
+    p, h2{
+        color: v.$blanco;
+    }
+    h2{
+        font-size: 6rem;
+    }  
+    p{
+        font-size: 2.4rem;
+    }
+}
+// Formulario y contacto
+.formulario-contacto{
+    padding: 2rem;
+    @include m.desktop{
+        @include m.grid(2,1);
+        column-gap: 2rem;
+        align-items: center;
+        justify-content: center; 
+    } 
+}
+// Estilos de Contacto 
+.contacto .logo-contacto{
+    width: 25rem;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 4rem;
+}
+// Atencion Horarios 
+.contacto{
+    p, h3{
+        color:v.$blanco;
+    }
+    h3{
+        margin-top: 4rem;
+        font-size: 4rem;
+    }
+    p{
+        text-align: center;
+        font-size: 2.4rem;
+        margin: 0;
+        font-weight: 700;
+    }
+}
+// Estilos de formulario
+.formulario{
+    background-color:rgba(v.$lila, 0.4);
+    backdrop-filter: blur(20px);
+    width: min(80rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 15px;
+}
+.formulario .legend{
+    text-align: center;
+    color: v.$blanco;
+}
+.formulario fieldset{
+    border: none;
+}
+.contenedor-campos{
+
+}
+.campo{
+    margin-bottom: 1.5rem;
+}
+.campo label{
+    display: block;
+    margin-bottom: 1rem;
+}
+.input-text{
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 1.5rem;
+}
+select{
+    transition: all 0.3s ease-in-out;
+}
+textarea{
+    height: 20rem;
+}
+.enviar{
+    @include m.flex(row, center, center);
+    margin-top: 1rem;
+}

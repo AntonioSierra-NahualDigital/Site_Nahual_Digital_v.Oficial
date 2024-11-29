@@ -1,0 +1,29 @@
+{
+  "name": "sitio_nahual_digital",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp"
+  },
+  "keywords": [
+    "GULP",
+    "SASS",
+    "NPM",
+    "JS"
+  ],
+  "author": "Antonio Sierra",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.81.0"
+  },
+  "dependencies": {
+    "fullpage.js": "^4.0.31",
+    "gsap": "^3.12.5"
+  }
+}

@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Seccion marado
+.section-morado{
+    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    animation: fondoDinamico6 15s ease infinite;     
+    @keyframes fondoDinamico6 {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
+.fotografia{    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    img{
+        filter: grayscale(1);
+        border-radius: 5%;
+        height: auto; // Ajusta la altura automáticamente
+        width: 100%; // Asegura que la imagen ocupe el ancho completo del contenedor
+        max-width: 30rem; // Límite máximo para el ancho
+        max-height: 30rem; // Límite máximo para la altura
+        margin-bottom: 4rem;
+    }
+    @include m.tablet{
+        img {
+            max-width: 65rem; // Límite para tablets
+            max-height: 65rem; // Límite para tablets
+        }
+    }
+}
+
+// Secciones en Color negro
+.section-negro{
+    background-color: v.$negro;
+    @include m.grid;    
+    height: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    @include m.desktop{
+        @include m.grid (2, 1);
+        height: 550px;
+        column-gap: 2rem;
+        align-items: center;
+        justify-items: center;
+        padding-right: 5.2rem;
+        padding-left: 5.2rem;
+    }
+}
+.color-negro{
+    text-align: center;
+    h2, p{
+        color: v.$blanco;
+    }
+    @include m.desktop{
+        text-align: justify;
+    }
+}
+.section-negro .icono{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+// Secciones en color blanco
+.section-blanco{
+    background-color: v.$blanco;
+    @include m.grid;    
+    height: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    @include m.desktop{
+        @include m.grid (2, 1);
+        height: 550px;
+        column-gap: 2rem;
+        align-items: center;
+        justify-items: center;
+        padding-right: 5.2rem;
+        padding-left: 5.2rem;
+    }
+}
+.color-blanco{
+    text-align: center;
+    h2, p{
+        color: v.$negro;
+    }
+    @include m.desktop{
+        text-align: justify;
+    }
+}
+.section-blanco .icono{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+} 
