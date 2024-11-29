@@ -119,13 +119,6 @@
 // Estilos de los botones de las diapositivas
 .carrusel-botones3 {
     display: none;
-    position: absolute;
-    margin: 0 auto;   
-    left: 0;
-    right: 0;   
-    justify-content: space-between;
-    width: 95%;
-    z-index: 3; /* Asegura que los botones estén por encima de las diapositivas */
     @include m.tablet {
         display: flex;
         position: absolute;
@@ -136,6 +129,7 @@
         justify-content: space-between;
         width: 95%;
         transform: translateY(-50%);
+        z-index: 3; /* Asegura que los botones estén por encima de las diapositivas */
     }
     button {
         padding: 0.5rem;
