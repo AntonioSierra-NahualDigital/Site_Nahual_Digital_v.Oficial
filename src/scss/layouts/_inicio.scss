@@ -1,0 +1,243 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Sección impulsa
+.hero{
+    display: grid; // Define explícitamente el grid
+    grid-template-columns: 1fr; // Una sola columna en móviles
+    grid-template-rows: auto; // Ajusta las filas automáticamente
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include m.desktop {
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en desktops
+        column-gap: 2rem;
+        align-items: center;
+        justify-items: center;
+        padding-left: 5.2rem;
+        padding-right: 5.2rem;
+    }
+     
+}
+// Fondo de seccion 
+.hero{
+    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    animation: fondoDinamico6 15s ease infinite;     
+    @keyframes fondoDinamico6 {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
+.contenido-impulsa{
+    h1, p{
+        text-align: center;
+        color: v.$blanco;
+    }
+    @include m.desktop{
+        h1, p{
+            text-align: justify;
+        }
+    }
+}
+.imagen-impulsa{
+    width: 100%; // Asegura que ocupe todo el ancho del contenedor
+    max-width: 600px; // Límite máximo para evitar que sea demasiado grande
+    height: auto; // Mantiene proporción
+    margin: 0 auto; // Centra la imagen
+}
+// Primer carrusel
+.carrusel {
+    @include m.contenedor;
+    display: flex;
+    overflow: hidden;
+    position: relative;  /* Asegura que las diapositivas no se desborden */
+    height: 60rem;  /* Define una altura suficiente para que las diapositivas se vean completas */
+    flex-direction: column;  /* Alinea las diapositivas y los botones verticalmente */
+    @include m.tablet{
+        height: 65rem; 
+    }
+}
+.diapositiva {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 100%; /* Asegura que cada diapositiva ocupe todo el ancho */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: absolute;  /* Asegura que las diapositivas se posicionen una encima de la otra */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(100%);  /* Las diapositivas empiezan fuera de la pantalla a la derecha */
+    &.activa {
+        opacity: 1;
+        transform: translateX(0);  /* La diapositiva activa se posiciona dentro de la vista */
+        z-index: 1;  /* Asegura que la diapositiva activa esté por encima de las demás */
+    }
+    &.salida {
+        transform: translateX(-100%);  /* La diapositiva que sale se mueve a la izquierda */
+        opacity: 0;
+        z-index: 0;
+    }
+    &.entrante {
+        transform: translateX(100%);  /* La diapositiva entrante se mueve desde la derecha */
+        opacity: 1;
+        z-index: 1;
+    }
+    img {
+        width: 40rem;
+        max-width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }
+    figcaption {
+        display: none;
+    }
+    @include m.tablet {
+        img {
+            width: 40rem;
+        }
+    }
+    @include m.desktop {
+        flex-direction: row;
+        img {
+            width: 80rem;
+        }
+    }
+}
+// Segundo carrusel
+.carrusel2 {
+    @include m.contenedor;
+    @include m.flex;
+    overflow: hidden;
+    position: relative;
+    height: 55rem;
+    @include m.tablet{
+        height: 75rem;
+    }
+    @include m.desktop{
+        height: 82rem;
+    }  
+}
+.diapositiva2 {
+    @include m.flex(column, center, center);
+    text-align: center;
+    padding-top: 3.4rem;
+    min-width: 100%; /* Asegura que cada diapositiva ocupe todo el ancho */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(100%);  /* Las diapositivas empiezan fuera de la pantalla a la derecha */
+    &.activa2 {
+        opacity: 1;
+        transform: translateX(0); 
+        z-index: 1;
+    }
+    &.salida2 {
+        transform: translateX(-100%);  /* La diapositiva que sale se mueve a la izquierda */
+        opacity: 0;
+        z-index: 0;
+    }
+    &.entrante2 {
+        transform: translateX(100%);  /* La diapositiva entrante se mueve desde la derecha */
+        opacity: 1;
+        z-index: 1;
+    }
+}
+.carrusel-botones {
+    display: flex;
+    position: absolute;
+    top: 80%; // Centra los botones verticalmente
+    left: 0;
+    right: 0;
+    transform: translateY(-80%);
+    justify-content: space-between;    
+    width: 100%;
+    z-index: 3;  /* Asegura que los botones estén por encima de las diapositivas */
+    @include m.tablet{
+        top: 50%; // Centra los botones verticalmente
+        transform: translateY(-50%);
+    }
+    button {
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        width: 8rem;
+        height: auto;
+        transition: transform 0.37s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+// Sección de testtimonios 
+.testimoniales-seccion{   
+    padding-left: 5.2rem;
+    padding-right: 5.2rem;  
+}
+.informacion{
+      @include m.flex(column, center, center);
+      text-align: center;  
+}
+.testimoniales-wrapper{
+    display: block;    
+    width: 100%;
+    max-height: 300px; /* Ajusta el alto del contenedor para mostrar un solo testimonio */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    margin: 0 auto;
+}
+.testimonial{    
+   margin-bottom: 2rem;
+   width: 100%;  
+   padding: 20px;
+   background-color: v.$azul;
+   border-radius: 15px;
+   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+   color: v.$blanco;
+   p{
+    text-align: center;
+    color: v.$blanco;
+    margin: 0;
+   }
+   span{
+    font-style: italic;
+    font-weight: 600;
+   }
+   a{
+    color: v.$blanco;
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        color: v.$verde;
+    }
+   }   
+}
+.cta-section{
+    @include m.flex(column, center, center);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    img{
+        width: auto;
+        height: auto;
+    }
+    @include m.desktop{
+        @include m.flex(row, center, center);
+        padding-top: 2rem;        
+        img{
+            width: 85rem;
+            height: auto;
+        }
+    }
+}
+//Porpiedad para centrar las secciones al usar button y id 
+.centrar-carrusel2{
+    scroll-margin: 8vh; /* Centra todas las secciones en el visor */
+}
+
