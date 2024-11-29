@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Configuración del correo
-    $destinatario = "clientes@nahualdigital.site"; // Correo donde llegarán los mensajes
+    $destinatario = "contacto@nahualdigital.site"; // Correo donde llegarán los mensajes
     $asunto = "Nuevo mensaje de contacto: $nombre";
 
     // Cuerpo del mensaje
