@@ -42,7 +42,6 @@
     border: 1px solid v.$blanco;
     border-radius: 15px;
     margin: 0 auto;
-    margin-bottom: 3rem;
     overflow: hidden;
     position: relative;
     height: 70rem;
@@ -119,20 +118,30 @@
 }
 // Estilos de los botones de las diapositivas
 .carrusel-botones3 {
-    display: flex;
-    margin-top: 3rem;   
-    margin: 0 auto;  
+    display: none;
+    position: absolute;
+    margin: 0 auto;   
     left: 0;
-    right: 0;    
+    right: 0;   
     justify-content: space-between;
     width: 95%;
     z-index: 3; /* Asegura que los botones estén por encima de las diapositivas */
+    @include m.tablet {
+        display: flex;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 50%;
+        justify-content: space-between;
+        width: 95%;
+        transform: translateY(-50%);
+    }
     button {
         padding: 0.5rem;
-        background:rgba( v.$blanco, 0.8);
-        backdrop-filter: blur(20px);
+        background: none;
         border: none;
-        border-radius: 30px;
+        border-radius: 15px;
         width: 8rem;
         height: auto;
         transition: transform 0.37s ease-in-out;
