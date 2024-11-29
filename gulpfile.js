@@ -2,8 +2,8 @@ import {src, dest, series, watch} from 'gulp';
 
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
-const sass = gulpSass(dartSass)
-import terser from 'gulp-terser'
+const sass = gulpSass(dartSass);
+import terser from 'gulp-terser';
 
 export function js(done) {
     src('src/js/app.js')

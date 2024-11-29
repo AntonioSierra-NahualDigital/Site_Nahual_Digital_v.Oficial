@@ -3,12 +3,14 @@
 
 // Sección impulsa
 .hero{
-    // estilos seccion
-    @include m.grid;
+    display: grid; // Define explícitamente el grid
+    grid-template-columns: 1fr; // Una sola columna en móviles
+    grid-template-rows: auto; // Ajusta las filas automáticamente
     padding-left: 2rem;
     padding-right: 2rem;
-    @include m.desktop{
-        @include m.grid(2,1);
+
+    @include m.desktop {
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en desktops
         column-gap: 2rem;
         align-items: center;
         justify-items: center;
@@ -41,9 +43,10 @@
     }
 }
 .imagen-impulsa{
-    height: auto;
-    width: auto;
-    margin: 0 auto;
+    width: 100%; // Asegura que ocupe todo el ancho del contenedor
+    max-width: 600px; // Límite máximo para evitar que sea demasiado grande
+    height: auto; // Mantiene proporción
+    margin: 0 auto; // Centra la imagen
 }
 // Primer carrusel
 .carrusel {

@@ -15,18 +15,23 @@
 }
 .fotografia{    
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
     img{
         filter: grayscale(1);
         border-radius: 5%;
-        height: 30rem;
-        width: auto;
+        height: auto; // Ajusta la altura automáticamente
+        width: 100%; // Asegura que la imagen ocupe el ancho completo del contenedor
+        max-width: 30rem; // Límite máximo para el ancho
+        max-height: 30rem; // Límite máximo para la altura
         margin-bottom: 4rem;
     }
     @include m.tablet{
-        img{
-            height: 65rem;
-            width: auto;
-            margin-bottom: 4rem;
+        img {
+            max-width: 65rem; // Límite para tablets
+            max-height: 65rem; // Límite para tablets
         }
     }
 }

@@ -20,10 +20,10 @@
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.79.5"
+    "sass": "^1.81.0"
   },
   "dependencies": {
-    "fullpage.js": "^4.0.30",
+    "fullpage.js": "^4.0.31",
     "gsap": "^3.12.5"
   }
 }

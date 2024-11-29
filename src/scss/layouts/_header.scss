@@ -1,124 +1,145 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-// Estilos Genrales Header
-.header{
+// Estilos Generales Header
+.header {
     position: static;
     top: 0;
     width: 100%;
     z-index: 1000; /* para que esté encima del contenido */
     background-color: v.$negro;
     border-bottom: 1px solid v.$blanco;
-    @include m.tablet{
+
+    @include m.tablet {
         position: sticky;
     }
-    .contenido-header{
+
+    .contenido-header {
         transition: all 0.3s ease-in-out;
         padding: 2rem;
-         // Layout para diferentes resoluciones
-        @include m.telefono{
-            display:flex;
+
+        // Layout para diferentes resoluciones
+        @include m.telefono {
+            display: flex;
             flex-direction: column;
             align-items: center;
             padding: 2.4rem;
-        }     
-        @include m.tablet{
+        }
+        @include m.tablet {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
         }
-        @include m.desktop{
+        @include m.desktop {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;    
+            align-items: center;
         }
     }
-    //Incluir el icono del menú de hamburguesa, visible solo para pantallas pequeñas
+
+    // Menú hamburguesa
     .menu-hamburguesa {
-        display: none;//ocultamos el icono para pantallas grandes
-        cursor: pointer;      
+        display: none; // Ocultamos el ícono para pantallas grandes
+        cursor: pointer;
+
         @include m.telefono {
-            display: flex; //mostrmoas el icono de hamburguesa solo en telefonos
+            display: flex; // Mostramos el ícono solo en teléfonos
             width: 4rem;
             height: 4rem;
             justify-content: center;
             align-items: center;
             padding-top: 2rem;
             margin-top: 2rem;
-            margin-bottom: 4rem !important;
+            margin-bottom: 4rem !important; // Aseguramos que el margen inferior se aplique
             transition: transform 0.3s ease;
-            &:hover{
+
+            &:hover {
                 transform: scale(1.3);
-              }  
+            }
         }
-        //Aquí llamamos al mixin del menu de hamburguesa
-        @include m.hamburguesa;//esto lo añade
+
+        @include m.hamburguesa; // Esto debe añadir los estilos del ícono
     }
-    img{
+
+    img {
         height: 8rem;
-        width: auto;       
+        width: auto;
+    }
+
+    &.reducido {
+        // Transición suave para los cambios de tamaño
+        transition: all 0.3s ease-in-out;
+
+        @include m.tablet {
+            background-color: rgba(v.$negro, 0.5); // Solo para tablets y desktops
+            backdrop-filter: blur(15px); // Ajustar el desenfoque si es necesario
+
+            img {
+                height: 4rem; // Reducir el tamaño del logo
+                width: auto; // Mantener proporción del logo
+            }
+
+            .contenido-header {
+                padding: 0.5rem; // Reducir el padding en tablets y desktops
+            }
+        }
+
+        @include m.telefono {
+            background-color: v.$negro; // Asegura que no sea transparente en móviles
+        }
     }
 }
-.navegacion-principal{
-     //Estilos de télefono
-        display: none;
-        padding-top: 1rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 4rem;
-    @include m.tablet{ 
-        display: flex;      
+
+// Navegación Principal
+.navegacion-principal {
+    display: none;
+    padding-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    @include m.tablet {
+        display: flex;
         flex-direction: row;
-        .button{
+
+        .button {
             background-color: v.$violeta;
             padding: 1.5rem;
             border-radius: 1.5rem;
-            &:hover{
+
+            &:hover {
                 color: v.$violeta;
                 background-color: v.$amarillo;
                 transition: all 0.3s ease-in-out;
             }
-        } 
+        }
     }
+
     @include m.desktop {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;       
+        justify-content: space-between;
     }
-    a{
+
+    a {
         color: v.$blanco;
         font-size: 2rem;
         font-weight: 500;
-        transition: all 0.4s ease-in-out;       
-        &:hover{
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
             color: v.$verde;
         }
-        &.actual{
+
+        &.actual {
             color: v.$cian;
         }
     }
-    //Mostramos el menú cunaod está activo (clic en el icono de hamburguesa)
+
+    // Mostramos el menú cuando está activo (clic en el icono de hamburguesa)
     &.activo {
-        display: flex;//El menú se despliega en pantallas peuqeñas
-    }
-}
-//Estilos para el header reducido
-.header.reducido {
-     // Transición suave para los cambios de tamaño
-     transition: all 0.3s ease-in-out;
-    // Aplica la reducción solo en tablets y desktops
-    @include m.tablet {
-    // Opcional: Ajustar ligeramente la opacidad o estilos del fondo
-     background-color: rgba(v.$negro, 0.5); // Incrementar un poco la opacidad
-     backdrop-filter: blur(15px); // Ajustar el desenfoque si es necesario
-        img {
-            height: 4rem; // Reducir el tamaño del logo
-            width: auto; // Mantener proporción del logo
-        }
-        .contenido-header {
-            padding: 0.5rem; // Reducir el padding en desktops
-        }
+        display: flex; // El menú se despliega en pantallas pequeñas
     }
 }
