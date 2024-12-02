@@ -14,7 +14,7 @@ export function js(done) {
 export function css(done) {
     src('src/scss/app.scss')
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         }).on('error', sass.logError))
         .pipe( dest('build/css'))
     done()
