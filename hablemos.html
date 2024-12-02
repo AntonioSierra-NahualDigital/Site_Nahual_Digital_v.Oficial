@@ -62,7 +62,12 @@
         </div>
         <div class="formulario-contacto">
             <div>
-                <form class="formulario"  action="src/php/enviar_correo.php" method="POST">
+                <form class="formulario"  data-netlify="true" method="POST">
+                    <!-- Campo oculto para que Netlify procese el formulario -->
+                <input type="hidden" name="form-name" value="contacto">
+                <!-- Campo oculto para redirigir a la página de agradecimiento -->
+                <input type="hidden" name="redirect" value="https://nahualdigital.site/thank_you_page.html">
+
                     <p class="legend"><span class="subrayado">Queremos escucharte.</span> Déjanos tu información y pronto nos pondremos en contacto
                         contigo para ayudarte a crear algo único.</p>
                     <fieldset>
