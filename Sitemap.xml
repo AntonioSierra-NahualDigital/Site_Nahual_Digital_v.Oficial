@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Todas las URLs de tu sitio aquí -->
+    <url>
+        <loc>https://nahualdigital.site/</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>  
+    </url>
+    <url>
+        <loc> https://nahualdigital.site/servicios</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>  
+    </url>
+    <url>
+        <loc> https://nahualdigital.site/%C2%BFquienes%20somos</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>  
+    </url>
+    <url>
+        <loc>https://nahualdigital.site/hablemos</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>  
+        </url>
+    <url>
+        <loc>https://blog.nahualdigital.site/</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>  
+    </url>
+</urlset>
+
