@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPB451JWH7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TPB451JWH7');
+ <!-- Google Tag Manager -->
+<script defer>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.defer = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MZHQL2QV');
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MZHQL2QV');</script>
-    <!-- End Google Tag Manager -->
- <!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    // Inicializa el Pixel con tu ID
-    fbq('init', '1090403225902511');
-    // Función para generar un event_id único
-    function generarEventId() {
-        return 'event_' + Math.random().toString(36).substr(2, 9) + Date.now();
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
     }
-    // Trackea el evento 'PageView' con el event_id
-    fbq('track', 'PageView', {
-        event_id: generarEventId() // Agrega el identificador único aquí
+    window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TPB451JWH7';
+        script.defer = true;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+            gtag('js', new Date());
+            gtag('config', 'G-TPB451JWH7');
+        };
     });
 </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1090403225902511&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+<!-- Meta Pixel Code -->
+<script defer>
+    (function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.defer = true; // Cambiado de async a defer para evitar bloqueos en la carga.
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    // Inicializa el Pixel con tu ID
+    window.addEventListener('load', function() {
+        fbq('init', '1090403225902511');        
+        // Función para generar un event_id único
+        function generarEventId() {
+            return 'event_' + Math.random().toString(36).substr(2, 9) + Date.now();
+        }        
+        // Trackea el evento 'PageView' con el event_id
+        fbq('track', 'PageView', {
+            event_id: generarEventId() // Agrega el identificador único aquí
+        });
+    });
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1090403225902511&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=devic-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nahual Digital</title>
     <link rel="stylesheet" href="build/css/app.css">
     <link rel="icon" href="src/img/iconos/icono_fovicon.svg"  type="image/svg+xml">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,
-        100..900;1,100..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
+           <!-- Preconnect para mejorar la carga de las fuentes -->
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+           <!-- Fuentes optimizadas con carga asíncrona -->
+           <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+               rel="stylesheet" media="print" onload="this.media='all'">
+           <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" 
+               rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body id="hablemos">
     <!-- Google Tag Manager (noscript) -->
