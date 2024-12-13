@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "fullpage.js": "^4.0.31",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "load-script": "^2.0.0"
   }
 }
