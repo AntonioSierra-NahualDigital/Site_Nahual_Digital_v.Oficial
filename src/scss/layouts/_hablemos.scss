@@ -5,25 +5,13 @@
 .hablemos{
     padding-left: 2rem;
     padding-right: 2rem; 
-    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
-    background-size: 300% 300%;
-    background-attachment: fixed;
-    animation: fondoDinamico6 15s ease infinite;     
-    @keyframes fondoDinamico6 {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    @include m.tablet{
-        padding-left: 5.2rem;
-        padding-right: 5.2rem; 
-    }
+    background-color: v.$blanco;
 }
 .hablemos .titulo{
     @include m.flex(column, center, center);
     text-align: center;
     p, h2{
-        color: v.$blanco;
+        color: v.$gris;
     }
     h2{
         font-size: 6rem;
@@ -52,7 +40,7 @@
 // Atencion Horarios 
 .contacto{
     p, h3{
-        color:v.$blanco;
+        color:v.$gris;
     }
     h3{
         margin-top: 4rem;
@@ -62,12 +50,11 @@
         text-align: center;
         font-size: 2.4rem;
         margin: 0;
-        font-weight: 700;
     }
 }
 // Estilos de formulario
 .formulario{
-    background-color:rgba(v.$lila, 0.4);
+    background-color: v.$violeta;
     backdrop-filter: blur(20px);
     width: min(80rem, 100%);
     margin: 0 auto;

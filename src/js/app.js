@@ -78,12 +78,12 @@ function iniciarCarrusel() {
         clearInterval(intervalo);  // Detiene el intervalo actual
         intervalo = setInterval(() => {
             cambiarDiapositiva(1);  // Avanza automáticamente después de reiniciar el intervalo
-        }, 5000);
+        }, 5000); 
     }  
     // Autoplay: cambiar la diapositiva cada 8 segundos
     intervalo = setInterval(() => {
         cambiarDiapositiva(1);  // Cambia a la siguiente diapositiva
-    }, 8000);
+    }, 20000);
     // Mostrar la primera diapositiva
     mostrarDiapositiva(indiceActual);
 }

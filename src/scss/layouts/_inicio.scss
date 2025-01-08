@@ -15,48 +15,52 @@
         justify-items: center;
         padding-left: 5.2rem;
         padding-right: 5.2rem;
-    }
-     
+    }     
 }
 // Fondo de seccion 
 .hero{
-    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
-    background-size: 300% 300%;
-    background-attachment: fixed;
-    animation: fondoDinamico6 15s ease infinite;     
-    @keyframes fondoDinamico6 {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+    background-color: v.$blanco;
 }
 .contenido-impulsa{
-    h1, p{
+    h1, h2, p{
         text-align: center;
-        color: v.$blanco;
+        color: v.$gris; 
+    }
+    h2{
+        font-weight: 400;
+        font-style: italic;
+    }
+    p{
+        margin: 0;
     }
     @include m.desktop{
-        h1, p{
+        h1, h2, p{
             text-align: justify;
         }
     }
 }
 .imagen-impulsa{
-    width: 100%; // Asegura que ocupe todo el ancho del contenedor
-    max-width: 600px; // Límite máximo para evitar que sea demasiado grande
-    height: auto; // Mantiene proporción
+    width: auto; 
+    height: auto; 
     margin: 0 auto; // Centra la imagen
+    @include m.tablet{
+        width: 550px; 
+        height: 780px;
+    }
 }
 // Primer carrusel
 .carrusel {
-    @include m.contenedor;
+    @include m.contenedor;  
     display: flex;
     overflow: hidden;
     position: relative;  /* Asegura que las diapositivas no se desborden */
-    height: 60rem;  /* Define una altura suficiente para que las diapositivas se vean completas */
+    height: 80rem;  /* Define una altura suficiente para que las diapositivas se vean completas */
     flex-direction: column;  /* Alinea las diapositivas y los botones verticalmente */
     @include m.tablet{
         height: 65rem; 
+    }
+    @include m.desktop{
+        height: 40rem; 
     }
 }
 .diapositiva {
@@ -83,7 +87,7 @@
     }
     &.entrante {
         transform: translateX(100%);  /* La diapositiva entrante se mueve desde la derecha */
-        opacity: 1;
+        opacity: 0;
         z-index: 1;
     }
     img {
@@ -175,10 +179,33 @@
         }
     }
 }
-// Sección de testtimonios 
-.testimoniales-seccion{   
+// Sección valores
+.valores{
+    @include m.flex(column, center, center);
     padding-left: 5.2rem;
-    padding-right: 5.2rem;  
+    padding-right: 5.2rem;
+    h2, p{
+        text-align: center;
+    }
+    .img-valores{
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+        padding-top: 2.5rem;
+        @include m.tablet{
+            height: 400px;
+            width: auto; 
+        }
+    }
+}
+// Sección de testtimonios 
+.testimoniales-seccion{ 
+    margin-top: 2.5rem;  
+    padding-left: 5.2rem;
+    padding-right: 5.2rem;
+    h2{
+        margin: 0;
+    }  
 }
 .informacion{
       @include m.flex(column, center, center);
@@ -197,7 +224,7 @@
    margin-bottom: 2rem;
    width: 100%;  
    padding: 20px;
-   background-color: v.$azul;
+   background-color: v.$violeta;
    border-radius: 15px;
    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
    color: v.$blanco;

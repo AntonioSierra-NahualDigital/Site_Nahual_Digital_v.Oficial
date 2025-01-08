@@ -3,15 +3,7 @@
 
 // Seccion marado
 .section-morado{
-    background: linear-gradient(135deg, #000000, #3A1B5E, #1B2945);
-    background-size: 300% 300%;
-    background-attachment: fixed;
-    animation: fondoDinamico6 15s ease infinite;     
-    @keyframes fondoDinamico6 {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+    background: v.$violeta;
 }
 .fotografia{    
     margin: 0 auto;
@@ -20,7 +12,6 @@
     align-items: center;
     max-width: 100%;
     img{
-        filter: grayscale(1);
         border-radius: 5%;
         height: auto; // Ajusta la altura automáticamente
         width: 100%; // Asegura que la imagen ocupe el ancho completo del contenedor
@@ -35,10 +26,9 @@
         }
     }
 }
-
 // Secciones en Color negro
 .section-negro{
-    background-color: v.$negro;
+    background-color: v.$morado;
     @include m.grid;    
     height: auto;
     padding-right: 2rem;
@@ -57,9 +47,10 @@
     text-align: center;
     h2, p{
         color: v.$blanco;
+        margin: 0;
     }
     @include m.desktop{
-        text-align: justify;
+        text-align: left;
     }
 }
 .section-negro .icono{
@@ -88,9 +79,10 @@
     text-align: center;
     h2, p{
         color: v.$negro;
+        margin : 0;
     }
     @include m.desktop{
-        text-align: justify;
+        text-align: left;
     }
 }
 .section-blanco .icono{

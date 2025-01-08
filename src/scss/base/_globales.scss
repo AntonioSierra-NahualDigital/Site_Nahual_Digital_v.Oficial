@@ -18,6 +18,7 @@ body {
     font-style: normal;
     color: v.$negro;
     font-size: 2.2rem;
+    background-color: v.$blanco;
 }
 .sombra{
     rgba:(148,139,148,0.93);
@@ -27,7 +28,8 @@ p {
     font-family: v.$fuente_principal;
     color: v.$negro;
     line-height: 1.5;
-    font-size:  2.2rem; 
+    font-size:  2.2rem;
+    
 }
 .contenedor {
     width: 95%;
@@ -37,21 +39,24 @@ p {
 a {
     text-decoration: none;
 }
-h1, h2, h3 {
+h1, h3 {
     font-family: v.$fuente_titulos;
     margin: 0 0 0 0;
     font-weight: 400;
 }
+h2{
+    font-family: v.$fuente_principal;
+}   
 h1 {
     font-size: 5rem;
     @include m.telefono{
-        font-size: 3rem;  
+        font-size: 4rem;  
     }
 }
 h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     @include m.telefono{
-        font-size: 3rem;   
+        font-size: 2.5rem;   
     }
 }
 h3 {
@@ -70,4 +75,5 @@ body > section {
 section{
     scroll-margin: 15vh; /* Centra todas las secciones en el visor */
 }
+
 
