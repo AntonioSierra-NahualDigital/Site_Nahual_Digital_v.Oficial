@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     activarMenuPrincipal(); // Activa el menú hamburguesa
     gestionarNavegacion();  // Puedes expandir esta función para gestionar la navegación
     iniciarCarrusel();
-    iniciarCarrusel2();
-    iniciarCarrusel3();
     gestionarPlanes();
     manejarReduccionHeader();
     iniciarPantallaDeCarga();
@@ -86,114 +84,6 @@ function iniciarCarrusel() {
     }, 20000);
     // Mostrar la primera diapositiva
     mostrarDiapositiva(indiceActual);
-}
-// Función para iniciar el carrusel
-function iniciarCarrusel2() {
-    let indiceActual = 0;  // Variable local para el índice de la diapositiva actual
-    const diapositivas = document.querySelectorAll('.diapositiva2');
-    const botonPrev = document.querySelector('.prev');
-    const botonNext = document.querySelector('.next');
-    let intervalo;
-        // Verifica si los elementos del carrusel 2 existen en el DOM
-        if (!diapositivas.length || !botonPrev || !botonNext) {
-            console.warn('Carrusel 2 no encontrado en esta página.');
-            return;
-        }
-    // Función para mostrar la diapositiva actual
-    function mostrarDiapositiva(indice) {
-        diapositivas.forEach((diapositiva, i) => {
-            diapositiva.classList.remove('activa2', 'entrante2', 'salida2');            
-            if (i === indice) {
-                diapositiva.classList.add('activa2');  // Muestra la diapositiva activa
-            } else if (i === (indice - 1 + diapositivas.length) % diapositivas.length) {
-                diapositiva.classList.add('salida2');  // La diapositiva que sale
-            } else if (i === (indice + 1) % diapositivas.length) {
-                diapositiva.classList.add('entrante2');  // La siguiente que entra
-            }
-        });
-    }
-    // Función para cambiar a la siguiente o anterior diapositiva
-    function cambiarDiapositiva(direccion) {
-        indiceActual = (indiceActual + direccion + diapositivas.length) % diapositivas.length;
-        mostrarDiapositiva(indiceActual);
-    }
-    // Función para reiniciar el autoplay
-    function reiniciarIntervalo() {
-        clearInterval(intervalo);  // Detiene el intervalo actual
-        intervalo = setInterval(() => {
-            cambiarDiapositiva(1);  // Avanza automáticamente después de reiniciar el intervalo
-        }, 5000);
-    }
-      // Evento para el botón "Anterior"
-      botonPrev.addEventListener('click', () => {
-        cambiarDiapositiva(-1);  // Retrocede una diapositiva
-        reiniciarIntervalo();  // Reinicia el autoplay al hacer clic manualmente
-    });
-    // Evento para el botón "Siguiente"
-    botonNext.addEventListener('click', () => {
-        cambiarDiapositiva(1);  // Avanza una diapositiva
-        reiniciarIntervalo();  // Reinicia el autoplay al hacer clic manualmente
-    });
-    // Autoplay: cambiar la diapositiva cada 8 segundos
-    intervalo = setInterval(() => {
-        cambiarDiapositiva(1);  // Cambia a la siguiente diapositiva
-    }, 8000);
-    // Mostrar la primera diapositiva
-    mostrarDiapositiva(indiceActual);
-}
-// Funcion que inicia el carrusel 3
-function iniciarCarrusel3() {
-    (function () {
-        let indiceActual = 0; // Índice de la diapositiva actual
-        const diapositivas = document.querySelectorAll('.diapositiva3');
-        const botonPrev3 = document.querySelector('.prev3');
-        const botonNext3 = document.querySelector('.next3');
-        let intervalo;
-
-        if (!diapositivas.length || !botonPrev3 || !botonNext3) {
-            console.error('Error: Elementos del carrusel 3 no encontrados.');
-            return;
-        }
-
-        function mostrarDiapositiva3(indice) {
-            diapositivas.forEach((diapositiva, i) => {
-                diapositiva.classList.remove('activa3', 'entrante3', 'salida3');
-                if (i === indice) {
-                    diapositiva.classList.add('activa3');
-                } else if (i === (indice - 1 + diapositivas.length) % diapositivas.length) {
-                    diapositiva.classList.add('salida3');
-                } else if (i === (indice + 1) % diapositivas.length) {
-                    diapositiva.classList.add('entrante3');
-                }
-                console.log(`Diapositiva ${i} clases:`, diapositiva.className);
-            });
-        }
-
-        function cambiarDiapositiva3(direccion) {
-            indiceActual = (indiceActual + direccion + diapositivas.length) % diapositivas.length;
-            mostrarDiapositiva3(indiceActual);
-        }
-
-        function reiniciarIntervalo3() {
-            clearInterval(intervalo);
-            intervalo = setInterval(() => cambiarDiapositiva3(1), 8000);
-        }
-
-        botonPrev3.addEventListener('click', () => {
-            console.log('Botón anterior presionado');
-            cambiarDiapositiva3(-1);
-            reiniciarIntervalo3();
-        });
-
-        botonNext3.addEventListener('click', () => {
-            console.log('Botón siguiente presionado');
-            cambiarDiapositiva3(1);
-            reiniciarIntervalo3();
-        });
-
-        intervalo = setInterval(() => cambiarDiapositiva3(1), 8000);
-        mostrarDiapositiva3(indiceActual);
-    })();
 }
 //Funciones para mostrar los planes
 function gestionarPlanes() {
